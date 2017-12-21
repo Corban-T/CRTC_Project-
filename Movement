@@ -1,36 +1,42 @@
-if x>=25():
-  x = 25
-  print ("You hit a Wall")
-if x<=0():
-  x = 0
-  print ("You hit a Wall")
-if y>=25():
-  y = 25
-  print ("You hit a Wall")
-if y<=0():
-  y = 0
-  print ("You hit a Wall")
+import sys
+x = 12
+y = 12
+def move():
+    global x
+    global y
+    pos = (x, y)
+    print "Current Position: " , pos
+    directions = input("Where to? DIRECTIONS: FORWARD, BACKWARD, LEFT, RIGHT: ")
+    distance = int(input("How many steps?: "))
 
-def moveinput():
-  directions = input("Where to? DIRECTIONS: FORWARD, BACKWARD, LEFT, RIGHT: ")
-  distance = input(int("How many steps?: "))
-
-move = (movecommand, int(steps))
-if directions(FORWARD):
-  y = y+distance
-elif directions(BACKWARD):
-  y = y-distance
-elif directions(LEFT):
-  x = x+distance
-elif directions(RIGHT):
-  x = x-distance
-else:
-  print ("INVALID INPUT: Try again:")
-  moveinput()
-
-
-FORWARD = y+steps
-BACKWARD= y-steps
-LEFT= x+steps
-RIGHT= x-steps
-pos = (x,y)
+    if directions== "FORWARD":
+      y = y + distance
+      print "FORWARD TRUE"
+    elif directions== "BACKWARD":
+      y = y - distance
+      print "BACKWARD TRUE"
+    elif directions== "LEFT":
+        x = x - distance
+        print "LEFT TRUE"
+    elif directions== "RIGHT":
+        x = x + distance
+        print "RIGHT TRUE"
+    elif directions== "DEVMODE":
+        print "DEV OVERIDE"
+        if distance == 15:
+            x = 15
+            y = 15
+        if distance == 20:
+            x = 20
+            y = 20
+    else:
+        print ("INVALID INPUT: Try again:")
+    print "....."
+    
+for i in range(5):
+    move()
+    pos = (x, y)
+    if pos == (15, 15):
+        print "Most unfortunate, you tripped on "
+        print "a BANANA PEEL and broke your NECK"
+        exit()
