@@ -40,3 +40,4 @@ for i in range(5):
         print "Most unfortunate, you tripped on "
         print "a BANANA PEEL and broke your NECK"
         exit()
+        
